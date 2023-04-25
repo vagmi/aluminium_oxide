@@ -26,4 +26,18 @@ RSpec.describe AluminiumOxide do
       expect(msg).to eq("Hello, From Rust!")
     end
   end
+
+  describe AluminiumOxide::Capitalizer do
+    before do
+      @capitalizer = AluminiumOxide::Capitalizer.new("railsconf")
+    end
+    it "capitalize characters" do
+      msg = []
+      @capitalizer.capitalize do |c|
+        msg << c
+      end
+      expect(msg.length).to eq(9)
+      expect(msg.join).to eq("RAILSCONF")
+    end
+  end
 end
