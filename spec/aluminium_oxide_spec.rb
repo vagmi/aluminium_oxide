@@ -19,4 +19,11 @@ RSpec.describe AluminiumOxide do
       expect(msg).to eq("Hello, railsconf!")
     end
   end
+
+  describe "AluminiumOxide::GREETER" do
+    it "should have a constant greeter exposed" do
+      msg = AluminiumOxide::GREETER.greet
+      expect(msg).to eq("Hello, From Rust!")
+    end
+  end
 end
